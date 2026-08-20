@@ -12,18 +12,7 @@ for(const button of buttons){
             display.value=display.value.slice(0,-1);
         }else if(value==="="){
             try {
-                let text = display.value;
-                let operator = "";
-                
-                if (text.includes("+")) operator = "+";
-                else if (text.includes("-")) operator = "-";
-                else if (text.includes("*")) operator = "*";
-                else if (text.includes("/")) operator = "/";
-                else if (text.includes("%")) operator = "%";
-
-                if (operator !== "") {
-                    display.value = operation(text, operator);
-                }
+                display.value = operation(display.value);
             } catch (error) {
                 display.value = 'Error';
             }
